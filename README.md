@@ -5,7 +5,7 @@ Este es un proyecto en HTML5 CSS3 y JavaScript para el módulo de JavaScript del
 ## Integrantes
     - Nelson Andrés Mora López ✔️
     - Viviana Rodriguez ✔️
-    - Camila Sopo 
+    - Camila Sopo ✔️
     - Manuel Steven Ballesteros Moreno ✔️
     - Michael Valderrama ✔️
     - Richard Barbosa ✔️
