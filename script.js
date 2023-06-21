@@ -4,3 +4,10 @@ var cuentas = [
     { nombre: "Maui", saldo: 67, pass: "Mau1-2"}
   ];
 
+function ValidarPass(UserPass, SavePass) {
+    if (UserPass===SavePass) {
+        return 1
+    } else {
+        return 0
+    }
+}
