@@ -14,7 +14,7 @@ function ValidarPass(UserPass, User) {
     }
 }
 
-let ingreso=(user.value, pass.value, cuentas)=>{
+let ingreso=(user.value, pass.value, cuentas) => {
     let userOk;
     let passOk;
     userOk=BuscarUsuario(user.value, cuentas);
