@@ -44,10 +44,35 @@ function BuscarUsuario(usuarioIngresado, ArrayUsers) {
             validador = ArrayUsers[i];
         } else {
             validador = 0;
-        }
+
+function BuscarUsuario(usuarioIngresado, ArrayUsers){
+    let validador=0;
+    for(let i=0;i<ArrayUsers.length;i++){
+        if(usuarioIngresado===ArrayUsers[i].nombre){
+            validador=ArrayUsers[i];
+        } else{
+            validador=0;}
     }
     return validador
 }
+function retirarSaldo(nombreSeleccionado, saldoARetirar) {
+
+    for (var i = 0; i < cuentas.length; i++) {
+        if (cuentas[i].nombre === nombreSeleccionado) {
+
+            if (cuentas[i].saldo < saldoARetirar) {
+                return false;
+            }
+            else {
+                cuentas[i].saldo = cuentas[i].saldo - saldoARetirar;
+                return true;
+            }
+        }
+    }
+    
+
+}
+        
 
 function movimientoEntreCuentas(cuentaDestino, cantidad, saldoActual, cuentas) {
     if (cantidad <= saldoActual) {
