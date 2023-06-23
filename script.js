@@ -30,6 +30,24 @@ let ingreso=(user.value, pass.value, cuentas)=>{
     }
 }
 
+function retirarSaldo(nombreSeleccionado, saldoARetirar) {
+
+    for (var i = 0; i < cuentas.length; i++) {
+        if (cuentas[i].nombre === nombreSeleccionado) {
+
+            if (cuentas[i].saldo < saldoARetirar) {
+                return false;
+            }
+            else {
+                cuentas[i].saldo = cuentas[i].saldo - saldoARetirar;
+                return true;
+            }
+        }
+    }
+    
+
+}
+
 function BuscarUsuario(usuarioIngresado, ArrayUsers){
     let validador=0;
     for(let i=0;i<ArrayUsers.length;i++){
