@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cajero</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <h1 class="titulo">App Cajero</h1>
+        <button class="logout">Logout</button>
+      </nav>
+    </header>
+
+    <!-- Menu principal -->
+    <main class="container" id="menu">
+      <div class="menu">
+        <div>
+          <img src="./assest/cajero.jpg" alt="cajero" />
+        </div>
+        <div class="form">
+          <h2>Seleccione su usuario</h2>
+          <form>
+            <select id="cuentas" name="nombre">
+              <option value=""></option>
+            </select>
+            <input type="submit" class="btn" value="Seleccionar" />
+          </form>
+        </div>
+      </div>
+    </main>
+    
+    <!-- Menu usuario -->
+    <main class="container ocultar" id="usuario">
+    <div class="user">
+      <section class="welcome">
+        <h2 id="names">Bienvenido</h2>
+        
+        <div>
+          <h3>Que deseas realizar</h3>  
+        </div>
+        <button id="saldo" class="btn">Consultar Saldo</button>
+        <button id="ingresarMonto" class="btn">Ingresar Monto</button>
+        <button id="retirarMonto" class="btn">Retirar Monto</button>
+      </section>
+      <div id="funciones" class="funcion"></div>
+            
+    </div>
+    </main>
+
+    <!--  Modal de contraseña -->
+    <section>
+      <div class="hiden">
+        <div class="usuario">
+          <span id="name"></span>
+          <div>
+            <span>Password</span>
+            <input id="password" type="password" name="password" />
+          </div>
+          <button class="boton">Entrar</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./cajero.js" type="module"></script>
+  </body>
+</html>
