@@ -1,4 +1,4 @@
-import { $mostrar, cuentas, d } from "./cajero.js";
+import { $mostrar, d } from "./cajero.js";
 
 export let search = "";
 

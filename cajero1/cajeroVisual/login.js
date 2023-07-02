@@ -2,23 +2,30 @@ import {
   $logout,
   $menu,
   $modal,
+  $modalCrearUsuario,
   $mostrar,
   $pass,
   $usuario,
-  cuentas,
   d,
 } from "./cajero.js";
 import { search } from "./crearData.js";
 import { cargarVisual, ingresarMonto } from "./funciones/cargar.js";
 import { consultarSaldo } from "./funciones/consultarSaldo.js";
 import { retirarMonto, retirarVisual } from "./funciones/retirar.js";
+import { crearUsuario } from "../cuentas.js";
 
 export const login = () => {
   d.addEventListener("click", (e) => {
-    const cuenta = cuentas.filter((name) => name.nombre === search);
+    const cuenta = crearUsuario.usuarios.filter((name) => name.nombre === search);
+
+    if(e.target.matches("#create")){
+      $modalCrearUsuario.classList.add("mostrar")
+    }
+    
 
     if (e.target.matches(".hiden")) {
       $mostrar.classList.remove("mostrar");
+      $modalCrearUsuario.classList.remove("mostrar")
     }
 
     if (e.target.matches(".boton")) {
@@ -75,7 +82,8 @@ export const login = () => {
     }
 
     if (e.target.matches("#saldo")) {
-      consultarSaldo(cuenta[0].saldo);
+    //  consultarSaldo(cuenta[0]);
+      crearUsuario.consultarSaldo(cuenta[0]);  
     }
     if (e.target.matches("#ingresarMonto")) {
       cargarVisual();
@@ -90,6 +98,6 @@ export const login = () => {
     if (e.target.matches("#retirar")) {
       const $valor = d.getElementById("monto");
       retirarMonto(cuenta[0], $valor);
-    }
+    } 
   });
 };

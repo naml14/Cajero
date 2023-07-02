@@ -23,12 +23,14 @@
         </div>
         <div class="form">
           <h2>Seleccione su usuario</h2>
-          <form>
+          <form id="usuarios">
             <select id="cuentas" name="nombre">
               <option value=""></option>
             </select>
             <input type="submit" class="btn" value="Seleccionar" />
+            
           </form>
+          <button id="create">Agregar Usuario</button>
         </div>
       </div>
     </main>
@@ -61,6 +63,28 @@
             <input id="password" type="password" name="password" />
           </div>
           <button class="boton">Entrar</button>
+        </div>
+      </div>
+    </section>
+
+    <!--  Modal de Crear Usuario -->
+    <section>
+      <div class="hiden" id="newUser">
+        <div class="usuario ">
+          <span>Cree su nuevo usuario</span>
+          <div>
+            <form id="formCrearUsuario" class="crearUsuario">
+              <span>Nombre</span>
+              <input type="text" name="nombre"  required>
+              <span>Saldo</span>
+              <input type="number" name="saldo" required>
+              <span>Password</span>
+              <input id="password" type="password" name="password" required/>
+              <input type="submit" class="btn" value="Crear Usuario" />
+            </form>
+            
+          </div>
+          
         </div>
       </div>
     </section>

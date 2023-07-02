@@ -1,4 +1,5 @@
-import { crearData, search } from "./crearData.js";
+import { crearData} from "./crearData.js";
+import { crearUsuario, createUser } from "./cuentas.js";
 import { login } from "./login.js";
 import { logout } from "./logout.js";
 
@@ -14,24 +15,24 @@ export const d = document,
   $funciones = d.getElementById("funciones"),
   $button = d.createElement("button"),
   $span = d.createElement("span"),
-  $form = d.querySelector("form"),
-  $modal = d.querySelector(".usuario");
+  $form = d.getElementById("usuarios"),
+  $modal = d.querySelector(".usuario"),
+  $crearUsuario = d.getElementById("formCrearUsuario"),
+  $modalCrearUsuario = d.getElementById("newUser")
 
-export const cuentas = [
-  { nombre: "Mali", saldo: 200, password: "123" },
-  { nombre: "Gera", saldo: 290, password: "123" },
-  { nombre: "Maui", saldo: 67, password: "123" },
-];
 
-cuentas.forEach((element) => {
+  crearUsuario.consultar().forEach((element) => {
   const $option = document.createElement("option");
 
   $cuentas.appendChild($option).innerHTML = `${element.nombre}`;
   $option.value = element.nombre;
 });
 
+
+
 d.addEventListener("DOMContentLoaded", () => {
   crearData($form);
   login();
   logout($logout);
+  createUser($crearUsuario)
 });

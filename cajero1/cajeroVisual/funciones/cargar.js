@@ -4,19 +4,20 @@ import {
   $ingresarMonto,
   $saldo,
   $span,
-  cuentas,
 } from "../cajero.js";
+import { clean, crearUsuario } from "../cuentas.js";
 
 export const ingresarMonto = (cuenta, monto) => {
-  const nombre = cuentas.filter((name) => name.nombre === cuenta.nombre);
+  const nombre = crearUsuario.consultar().filter((name) => name.nombre === cuenta.nombre);
 
   if (monto.value.length > 0 && monto.value > 0) {
-    const suma = nombre[0].saldo + parseInt(monto.value);
+    const suma = parseInt(nombre[0].saldo) + parseInt(monto.value);
     console.log(suma);
 
     if (suma <= 990) {
       nombre[0].saldo += parseInt(monto.value);
-      monto.value = "";
+      
+      clean()
       $funciones.appendChild(
         $saldo
       ).textContent = `Su nuevo saldo es ${nombre[0].saldo}`;
@@ -28,7 +29,7 @@ export const ingresarMonto = (cuenta, monto) => {
       ).textContent = `Su cuenta no debe tener mas de 990$, su saldo es ${nombre[0].saldo} y esta intentando cargar ${monto.value}`;
       $saldo.classList.add("error");
       $saldo.classList.remove("exito");
-      monto.value = "";
+      clean()
     }
   } else {
     $funciones.appendChild(
@@ -36,7 +37,7 @@ export const ingresarMonto = (cuenta, monto) => {
     ).textContent = `Debe ingresar valores mayores a 0$`;
     $saldo.classList.add("error");
     $saldo.classList.remove("exito");
-    monto.value = "";
+    clean()
   }
 };
 

@@ -1,11 +1,12 @@
-import { $funciones, $saldo } from "../cajero.js";
+import { $funciones, $saldo} from "../cajero.js";
 
-export const consultarSaldo = (saldo) => {
+export const consultarSaldo = (cuenta) => {
   while ($funciones.firstChild) {
     $funciones.removeChild($funciones.firstChild);
   }
 
   $saldo.classList.remove("error");
   $saldo.classList.add("exito");
-  $funciones.appendChild($saldo).textContent = `Su saldo es ${saldo}`;
+  $funciones.appendChild($saldo).textContent = `Su saldo es ${cuenta.saldo}`;
+  
 };
