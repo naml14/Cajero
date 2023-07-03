@@ -1,5 +1,4 @@
 import { $cuentas, $modalCrearUsuario, d } from "./cajero.js"
-import { consultarSaldo } from "./funciones/consultarSaldo.js"
 
 class Cuentas{
     constructor(){
@@ -36,16 +35,14 @@ class Cuentas{
 
         const nombre = crearUsuario.consultar().filter(({nombre}) => nombre.toLocaleLowerCase() === data.nombre.toLocaleLowerCase())
 
-        console.log(nombre.length);
-        console.log(data.nombre);
-
-        if(nombre.length === 0){
+      if(nombre.length === 0){
           crearUsuario.agregarUsuario(data.nombre, parseInt(data.saldo), data.password)
           clean()
           $modalCrearUsuario.classList.remove("mostrar")
           alert(`Se creo el usuario: ${data.nombre} con éxito`)
         }else{
-          console.log("existe en base");
+          
+          alert(`El usuario: ${data.nombre} ya existe en el sistema`)
         }
 
 

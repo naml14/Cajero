@@ -68,7 +68,7 @@ export const tranferirVisual = (cuenta) => {
         $select.appendChild($option).innerHTML = `${element.nombre}`;
         $option.value = element.nombre;
       })
-        console.log(cuenta.nombre);
+        
         const nombre = d.getElementById(`${cuenta.nombre}`)
         $select.removeChild(nombre)
 }

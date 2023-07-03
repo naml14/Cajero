@@ -12,7 +12,7 @@ export const ingresarMonto = (cuenta, monto) => {
 
   if (monto.value.length > 0 && monto.value > 0) {
     const suma = parseInt(nombre[0].saldo) + parseInt(monto.value);
-    console.log(suma);
+    
 
     if (suma <= 990) {
       nombre[0].saldo += parseInt(monto.value);
@@ -45,7 +45,7 @@ export const cargarVisual = () => {
   while ($funciones.firstChild) {
     $funciones.removeChild($funciones.firstChild);
   }
-  console.log("visuall");
+
 
   $button.innerText = "Cargar";
   $button.classList.add("btn");

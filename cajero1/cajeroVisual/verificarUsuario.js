@@ -31,7 +31,7 @@ export const verificaUsuario = (cuenta, e) => {
         e.target.disabled = true;
         const id = setInterval(() => {
           var nodoHijo = $modal.lastChild;
-          console.log(nodoHijo);
+          
           $modal.removeChild(nodoHijo);
           e.target.disabled = false;
           clearInterval(id);

@@ -18,7 +18,7 @@ export const crearData = ($form) => {
       $saldo.setAttribute("id", "error")
     } else {
       const $error = d.getElementById("error")
-      $form.removeChild($error);
+      $error && $form.removeChild($error)
       search = data.nombre;
       $mostrar.classList.add("mostrar");
       d.getElementById(
