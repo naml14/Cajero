@@ -7,7 +7,7 @@
 /* Header */
 
 header{
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     background-color: rgba(153, 95, 211, 0.842);
 }
@@ -20,6 +20,7 @@ header{
     cursor: pointer;
     opacity: 0;
     display: none;
+    align-items: center;
 }
 
 .logout:hover{
@@ -30,12 +31,15 @@ header{
 
 .nav{
     display: flex;
+    
 }
 
 .titulo{
     flex-grow: 1;
-    
+    font-size: 2rem;   
+    font-family: 'Courier New', Courier, monospace;
 }
+
 
 /*  Menu */
 
@@ -47,9 +51,83 @@ header{
 }
 
 
-.form{
+.bienvenido{
     width: 100%;    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.bienvenido h2::after{
+    content: "";
+    display: block;
+    width: 115px;
+    height: 3px;
+    background-color: rebeccapurple;
+    margin-top: 3px;
+    margin-bottom: 30px;
+}
+.app{
+     line-height: 1.3rem;
+     
+}
+
+.form{
+    width: 70%;
+    flex-grow: 0.5;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 15px solid rgb(67, 10, 124);
+    border-bottom-style: dotted;   
+    
+}
+
+select{
+    width: 150px;
+}
+
+
+.from_usuarios{
+    width: 100%;
+    display: flex;
+    flex-direction: column ;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    
+    
+}
+
+.from_usuarios span {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+span ion-icon {
+    font-size: 30px;
+}
+
+.bienvenido_acount{
+    flex-grow: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+        
+}
+
+.bienvenido_acount span {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 img{
@@ -67,6 +145,7 @@ img{
     height: calc(100vh - 6rem);
     
 }
+
 
 .lista{
     list-style: none;
@@ -95,13 +174,12 @@ img{
 
 /* Menu Usuario */
 
-.user{
+.menu_usuario{
+    padding: 20px 4rem;
+    height: calc(100vh - 5rem);
     display: flex;
-    padding: 2rem;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
+    
 }
 
 .funcion{
@@ -112,21 +190,32 @@ img{
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    
+
 }
 
 .welcome{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;    
-    width: 50%;
-    height: 100%;
+    flex-grow: 1;
+
+}
+
+.welcome_titulo{
+    padding: 5rem;
+    
     
 }
 
 
+.welcome_realizar{    
+    flex-grow: .5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
 
 .btn{
     padding: 5px 20px;
@@ -134,6 +223,7 @@ img{
     border: none;
     font-weight: 400;
     cursor: pointer;
+    
 }
 
 .btn:hover{
@@ -155,7 +245,7 @@ img{
 .exito{
     font-weight: 600;
     line-height: 1.5rem;
-    color:  rgba(153, 95, 211, 0.842);
+    color:  rgba(105, 41, 168, 0.842);
     font-size: 1rem;
     text-align: center;
 }
@@ -200,7 +290,7 @@ img{
 .ocultar{
     opacity: 0;
     display: none;
-    background-color: red;
+    
 }
 
 /* Modal Crear usuario */
@@ -208,5 +298,24 @@ img{
 .crearUsuario{
     display: flex;
     flex-direction: column;
-    width: 250px;    
+    width: 200px;    
+    justify-content: center;        
+}
+
+.crearUsuario input:nth-last-child(-n+1){
+    margin: 1rem auto;
+    text-align: center;
+    
+}
+
+.crearUsuario span:nth-child(n){
+    margin-top: 5px;    
+
+}
+
+.crearUsuario input:nth-child(n){
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    
 }

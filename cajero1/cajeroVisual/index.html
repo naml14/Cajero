@@ -8,9 +8,10 @@
     <title>Cajero</title>
   </head>
   <body>
+    <!-- Header -->
     <header>
       <nav class="nav">
-        <h1 class="titulo">App Cajero</h1>
+        <h1 class="titulo">Cajero Digital</h1>
         <button class="logout">Logout</button>
       </nav>
     </header>
@@ -21,36 +22,53 @@
         <div>
           <img src="./assest/cajero.jpg" alt="cajero" />
         </div>
-        <div class="form">
-          <h2>Seleccione su usuario</h2>
-          <form id="usuarios">
-            <select id="cuentas" name="nombre">
-              <option value=""></option>
-            </select>
-            <input type="submit" class="btn" value="Seleccionar" />
+
+        <div class="bienvenido">
+          <div>
+            <h2>Bienvenido !</h2>
+            <span class="app">En está aplicación podrás cargar, retirar, verificar tu saldo y adicionalmente realizar transferencias a las cuentas creadas en el sistema, como también puedes crear un usuario en nuestra app es muy fácil, debes tener considerar que el saldo en tu cuenta no debe pasar más de 990$ y al momento de retirar debes dejar 10$ como minimo. </span>
+          </div>
+          <form id="usuarios" class="form">
+              <div class="from_usuarios">
+                <div>
+                  <span><ion-icon name="person-outline"></ion-icon></ion-icon>Selecione su usuario</span>
+                </div>
+                <div>
+                  <select id="cuentas" name="nombre">
+                  <option value="" ></option>
+                  </select>
+                  <input type="submit" class="btn" value="Seleccionar" />
+                </div>
             
+              </div>          
+              
           </form>
-          <button id="create">Agregar Usuario</button>
+          <div class="bienvenido_acount">
+            <span><ion-icon name="person-add-outline"></ion-icon>No tienes cuenta ?</span>
+            <button id="create" class="btn"></ion-icon>Crear cuenta</button>
+          </div>
         </div>
       </div>
     </main>
-    
+
     <!-- Menu usuario -->
-    <main class="container ocultar" id="usuario">
-    <div class="user">
+    <main class="menu_usuario ocultar" id="usuario">
+      
       <section class="welcome">
-        <h2 id="names">Bienvenido</h2>
-        
-        <div>
-          <h3>Que deseas realizar</h3>  
+        <div class="welcome_titulo">
+          <h2 id="names"></h2>
+          <span>Aquí puedes gestionar tu cuenta</span>
         </div>
+        <div class="welcome_realizar">
+        <h3>Que deseas realizar ?</h3>  
         <button id="saldo" class="btn">Consultar Saldo</button>
         <button id="ingresarMonto" class="btn">Ingresar Monto</button>
         <button id="retirarMonto" class="btn">Retirar Monto</button>
+        <button id="transferirDinero" class="btn">Transferir Dinero</button>
+        </div>
       </section>
-      <div id="funciones" class="funcion"></div>
-            
-    </div>
+      <div id="funciones" class="funcion" ></div>    
+      </div>
     </main>
 
     <!--  Modal de contraseña -->
@@ -70,25 +88,25 @@
     <!--  Modal de Crear Usuario -->
     <section>
       <div class="hiden" id="newUser">
-        <div class="usuario ">
+        <div class="usuario">
           <span>Cree su nuevo usuario</span>
           <div>
             <form id="formCrearUsuario" class="crearUsuario">
               <span>Nombre</span>
-              <input type="text" name="nombre"  required>
+              <input type="text" name="nombre" required />
               <span>Saldo</span>
-              <input type="number" name="saldo" required>
+              <input type="number" name="saldo" required />
               <span>Password</span>
-              <input id="password" type="password" name="password" required/>
+              <input id="password" type="password" name="password" required />
               <input type="submit" class="btn" value="Crear Usuario" />
             </form>
-            
           </div>
-          
         </div>
       </div>
     </section>
 
     <script src="./cajero.js" type="module"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

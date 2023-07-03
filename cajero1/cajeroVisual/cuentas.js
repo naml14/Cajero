@@ -1,4 +1,4 @@
-import { $cuentas, d } from "./cajero.js"
+import { $cuentas, $modalCrearUsuario, d } from "./cajero.js"
 import { consultarSaldo } from "./funciones/consultarSaldo.js"
 
 class Cuentas{
@@ -13,9 +13,7 @@ class Cuentas{
     consultar(){
       return this.usuarios
     }
-    consultarSaldo(cuenta){
-      consultarSaldo(cuenta)
-    }
+   
   }
   
   export const crearUsuario = new Cuentas  
@@ -44,11 +42,13 @@ class Cuentas{
         if(nombre.length === 0){
           crearUsuario.agregarUsuario(data.nombre, parseInt(data.saldo), data.password)
           clean()
+          $modalCrearUsuario.classList.remove("mostrar")
+          alert(`Se creo el usuario: ${data.nombre} con éxito`)
         }else{
           console.log("existe en base");
         }
 
-console.log(crearUsuario.consultar());
+
         
         while ($cuentas.firstChild) {
             $cuentas.removeChild($cuentas.firstChild);
@@ -58,7 +58,7 @@ console.log(crearUsuario.consultar());
           $option.value = ""
           $cuentas.appendChild($option);
 
-        crearUsuario.consultar().forEach((element) => {
+            crearUsuario.consultar().forEach((element) => {
             const $option = document.createElement("option");
           
             $cuentas.appendChild($option).innerHTML = `${element.nombre}`;

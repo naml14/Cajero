@@ -18,7 +18,10 @@ export const d = document,
   $form = d.getElementById("usuarios"),
   $modal = d.querySelector(".usuario"),
   $crearUsuario = d.getElementById("formCrearUsuario"),
-  $modalCrearUsuario = d.getElementById("newUser")
+  $modalCrearUsuario = d.getElementById("newUser"),
+  $select = d.createElement("select"),
+  $texto = d.createElement("span"),
+  $option = d.createElement("option")
 
 
   crearUsuario.consultar().forEach((element) => {
